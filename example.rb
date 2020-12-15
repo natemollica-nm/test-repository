@@ -1,9 +1,9 @@
 # Launch School Intro to Ruby Project #
 # arrays #
-nums = 1...100
-nums.to_a
+nums=*(1..100).to_a
+
 i = 0
 nums.each do |i|
-  next if i % 2 == 0
+  next if i > 50
   puts "#{i}"
-  end
+end
