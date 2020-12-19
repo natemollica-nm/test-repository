@@ -1,7 +1,8 @@
 # Launch School Intro to Ruby Project #
 # Movie Ratings #
 movies = {
-   "The Green Mile".intern => 10
+   "The Green Mile".intern => 10,
+   "Forrest Gump".intern => 8
 }
 
 puts "Choose add, update, display, or delete: "
@@ -11,10 +12,15 @@ case choice
   when "add"
     puts "What movie would you like to add? Title: "
     title = gets.chomp.intern
-    puts "What rating would you give this title? (1-10): "
-    rating = gets.chomp.to_i
-    movies[title] = rating
-    puts "#{title}" + " has been added with a rating of #{rating}!" 
+    if movies[title].nil?
+      puts "What rating would you give this title? (1-10): "
+      rating = gets.chomp.to_i
+      movies[title] = rating
+      puts "#{title}" + " has been added with a rating of #{rating}!" 
+    else
+      puts "#{title} is already in the database. It's rating is #{movies[title]}"
+    end
+  
   when "update"
     puts "Updated!"
   when "display"
@@ -24,5 +30,3 @@ case choice
   else
     puts "Error!"
   end
-
-  puts movies
