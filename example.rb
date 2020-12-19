@@ -1,6 +1,5 @@
 # Launch School Intro to Ruby Project #
 # Movie Ratings #
-=begin
 movies = {
    "The Green Mile".intern => 10,
    "Forrest Gump".intern => 8
@@ -31,4 +30,3 @@ case choice
   else
     puts "Error!"
   end
-  =end
